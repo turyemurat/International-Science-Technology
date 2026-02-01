@@ -1,215 +1,115 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Science-Technology Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Toremurat | Intellectual Heritage & Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+KR:wght@300;500&family=Lora:ital,wght@0,400;1,500;1,600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --dark-brown: #3d2314;
-            --bg-color: #fdfaf5;
-            --accent-gold: #c5a059;
-            --text-main: #2d1b10;
-        }
-
-        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg-color); color: var(--text-main); scroll-behavior: smooth; line-height: 1.6; }
-
-        /* ТІЛДЕР ЖӘНЕ ТУЛАР */
-        .language-flags {
-            background: white;
-            padding: 10px 5%;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        .flag-item { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; font-weight: 600; }
-        .flag-item img { width: 24px; height: 16px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
-
+        :root { --luxy-brown: #1a120b; --gold: #c5a059; --text: #f5f5f5; --glass: rgba(255, 255, 255, 0.03); }
+        body { margin: 0; background: var(--luxy-brown); color: var(--text); font-family: 'Lora', serif; line-height: 1.8; }
+        
         header {
-            padding: 20px 5%;
-            background: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            height: 100vh;
+            background: linear-gradient(rgba(26,18,11,0.6), var(--luxy-brown)), url('library_main.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
+        h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 7px; }
+        .korean-sub { font-family: 'Noto Sans KR', sans-serif; font-size: 1.1rem; color: var(--gold); opacity: 0.8; letter-spacing: 3px; margin-top: 10px; }
 
-        .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('library_main.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
+        .container { max-width: 1200px; margin: -80px auto 100px; padding: 0 20px; }
+        .main-card { background: rgba(30, 20, 15, 0.99); border: 1px solid rgba(197, 160, 89, 0.3); padding: 80px 50px; box-shadow: 0 50px 100px rgba(0,0,0,0.9); }
+
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 2.2rem; margin: 10px 0; letter-spacing: 3px; }
+        .section-header .line { width: 100px; height: 1px; background: var(--gold); margin: 20px auto; }
+
+        /* Deep Content Grid */
+        .deep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+        .topic-box { border-left: 1px solid rgba(197, 160, 89, 0.4); padding-left: 30px; }
+        .topic-box h3 { color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.4rem; margin-bottom: 20px; }
+        .topic-box p { font-size: 1.05rem; color: #ccc; text-align: justify; }
+
+        /* Spiritual Section */
+        .spiritual-banner { 
+            background: rgba(197, 160, 89, 0.05); border: 1px solid var(--gold); 
+            padding: 40px; margin: 80px 0; position: relative; overflow: hidden;
         }
+        .spiritual-banner h2 { font-family: 'Cinzel', serif; color: var(--gold); margin-top: 0; }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 0; text-transform: uppercase; }
+        /* Profile Area */
+        .profile-wrap { display: flex; align-items: flex-start; gap: 60px; margin-top: 100px; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 60px; }
+        .profile-img { width: 250px; height: 350px; object-fit: cover; border: 1px solid var(--gold); padding: 10px; background: #000; }
+        .profile-bio h2 { font-family: 'Cinzel', serif; color: var(--gold); margin: 0; font-size: 2.5rem; }
 
-        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
-
-        /* КЕҢЕЙТІЛГЕН ЖАҢАЛЫҚТАР */
-        .news-section { margin-bottom: 100px; }
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .news-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .news-card img { width: 100%; height: 250px; object-fit: cover; }
-        .news-content { padding: 30px; }
-        .news-content h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-top: 0; color: var(--dark-brown); }
-
-        /* ҚОҢЫР КАРТОЧКА (СУРЕТТЕГІДЕЙ) */
-        .brown-box {
-            background-color: var(--dark-brown);
-            border-radius: 50px;
-            padding: 60px;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            color: white;
-            margin-bottom: 100px;
-            flex-wrap: wrap;
-        }
-        .brown-box img { width: 450px; height: 350px; border-radius: 35px; object-fit: cover; }
-
-        /* АВТОР БӨЛІМІ (МОҢҒОЛИЯ - ЖАНБОЛАТ) */
-        .author-card {
-            background: white;
-            padding: 80px;
-            border-radius: 50px;
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            margin-top: 100px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
-            flex-wrap: wrap;
-        }
-        .author-img { width: 300px; height: 300px; border-radius: 40px; object-fit: cover; border: 8px solid var(--bg-color); }
-        .author-info { flex: 1; }
-        .author-info h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0; color: var(--dark-brown); }
-        .tag-mongolia { background: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; }
-
-        /* БАЙЛАНЫС */
-        .contact-area {
-            background: var(--dark-brown);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            border-radius: 50px;
-            margin: 50px 0;
-        }
-        .contact-area a { color: var(--accent-gold); font-size: 2rem; text-decoration: none; font-weight: 900; }
-
-        .thanks { text-align: center; padding: 100px 0; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--dark-brown); opacity: 0.8; }
-
-        footer { background: #1a110a; color: white; padding: 50px; text-align: center; }
-
-        #google_translate_element { display: none; }
+        @media (max-width: 768px) { .profile-wrap { flex-direction: column; align-items: center; text-align: center; } .main-card { padding: 40px 20px; } }
     </style>
 </head>
 <body>
 
-    <div class="language-flags">
-        <div class="flag-item" onclick="changeLang('kk')"><img src="https://flagcdn.com/w40/kz.png"> Қазақша</div>
-        <div class="flag-item" onclick="changeLang('mn')"><img src="https://flagcdn.com/w40/mn.png"> Монгол</div>
-        <div class="flag-item" onclick="changeLang('en')"><img src="https://flagcdn.com/w40/us.png"> English</div>
-        <div class="flag-item" onclick="changeLang('tr')"><img src="https://flagcdn.com/w40/tr.png"> Türkçe</div>
-    </div>
-
     <header>
-        <div class="logo" style="font-family: 'Playfair Display'; font-size: 1.8rem;">IST HUB</div>
-        <nav>
-            <a href="#news" style="text-decoration:none; color:var(--dark-brown); font-weight:bold;">ЖАҢАЛЫҚТАР</a>
-            <a href="#author" style="margin-left:30px; text-decoration:none; color:var(--dark-brown); font-weight:bold;">АВТОР</a>
-        </nav>
+        <h1>TOREMURAT</h1>
+        <span class="korean-sub">전통과 기술의 공존</span> <p style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem; margin-top: 20px; color: #a68942;">Intellectual Excellence & Cultural Heritage</p>
     </header>
 
-    <section class="hero">
-        <h1>THANK YOU</h1>
-        <p style="font-size: 1.5rem; max-width: 700px;">Ғылым мен технология — адамзаттың ортақ мұрасы. Моңғолия мен Қазақстан жастарының білім ордасы.</p>
-    </section>
-
     <div class="container">
-        
-        <div id="news" class="news-section">
-            <h2 style="font-family: 'Playfair Display'; font-size: 3rem; text-align: center; margin-bottom: 50px;">Ғылым Әлемінде</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <img src="news_tech.jpg" alt="AI">
-                    <div class="news-content">
-                        <h3>Жасанды Интеллект: Жаңа Дәуір</h3>
-                        <p>Қазіргі таңда AI технологиялары медицинадан бастап ғарышты игеруге дейін барлық салада төңкеріс жасауда. Біз осы процестің ортасындамыз.</p>
-                    </div>
+        <div class="main-card">
+            
+            <div class="section-header">
+                <h2>Technical Foundations</h2>
+                <div class="line"></div>
+                <p>과학과 수학 — заманауи әлемнің тілі. Лицей оқушылары үшін іргелі білімнің маңызы.</p>
+            </div>
+
+            <div class="deep-grid">
+                <div class="topic-box">
+                    <h3>Mathematics & Logic</h3>
+                    <p>Математика — бұл тек сандар емес, бұл ойлау архитектурасы. Лицей қабырғасында жүріп, алгоритмдік ойлауды дамыту кез келген IT немесе инженерлік мамандықтың іргетасын қалайды. Әрбір есепті шешу — мидың жаңа нейрондық байланыстарын құру.</p>
                 </div>
-                <div class="news-card">
-                    <img src="library_detail.jpg" alt="Books">
-                    <div class="news-content">
-                        <h3>Кітап - Сарқылмас Қазына</h3>
-                        <p>Жас ғалымдарға арналған ғылыми-танымал әдебиеттер тізімі мен оларды тиімді оқудың әдістері туралы кеңейтілген мәліметтер.</p>
-                    </div>
+                <div class="topic-box">
+                    <h3>Physics & Engineering</h3>
+                    <p>Табиғат заңдылықтарын түсіну бізді технологияны басқаруға жетелейді. Кванттық физикадан бастап механикаға дейінгі ілімдерді игеру — болашақ инновациялардың бастамасы. Теория мен практиканы ұштастыру — біздің басты фокусымыз.</p>
                 </div>
             </div>
-        </div>
 
-        <div class="brown-box">
-            <img src="library_main.jpg" alt="Science">
-            <div class="card-text">
-                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin:0 0 20px 0;">Инновациялық Ізденіс</h2>
-                <p>Бұл хабтың негізгі мақсаты — жастарды ғылымға бағыттау, жаңа технологияларды игеруге көмектесу және халықаралық тәжірибемен бөлісу.</p>
-                <p style="color:var(--accent-gold); font-weight:bold; font-size: 1.2rem;">@janbolattoremurat</p>
+            <div class="spiritual-banner">
+                <h2>National Identity & Spirit</h2>
+                <p><strong>Мәдениетімізді сақтау — басты құндылық.</strong> Біз қанша жерден технологияны меңгерсек те, өз тамырымыздан ажырамауымыз керек. Рухани жаңғыру, ана тілімізді ардақтау және Моңғолия қазақтарының бірегей мәдени кодын сақтау — бізді әлемдік деңгейде ерекшелейтін басты күш. Білімді жігіт — өз халқының тарихын білетін және оны құрметтейтін тұлға.</p>
             </div>
-        </div>
 
-        <div class="author-card" id="author">
-            <img src="me.jpg" alt="Janbolat" class="author-img">
-            <div class="author-info">
-                <span class="tag-mongolia">МОНГОЛИЯ - АВТОР</span>
-                <h2>Жанболат Төремұрат</h2>
-                <p style="font-size: 1.2rem; margin-top: 20px;">
-                    Сәлем, бауырлар! Мен Моңғолияда тұратын бауырың Жанболатпын. Ғылым мен технологияға деген қызығушылығым осы жобаның басталуына түрткі болды. 
-                    Менің мақсатым — қай елде жүрсек те, қазақ жастарының білімі мен біліктілігін арттыруға атсалысу.
-                </p>
-                <p>Бұл хаб — біздің ортақ білім алаңымыз.</p>
+            <div class="section-header">
+                <h2>The Path of a Scholar</h2>
+                <div class="line"></div>
             </div>
-        </div>
 
-        <div class="contact-area">
-            <h3>Менімен байланыс:</h3>
-            <p>Сұрақтарыңыз немесе ұсыныстарыңыз болса, жазыңыз:</p>
-            <a href="mailto:janbolattoremurat@gmail.com">janbolattoremurat@gmail.com</a>
-        </div>
+            <div class="deep-grid">
+                <div class="topic-box">
+                    <h3>The Power of Reading</h3>
+                    <p>Кітап көп оқу — ақпаратты сүзу дағдысын қалыптастырады. Лицейшілерге кеңесім: тек оқулықпен шектелмеңіз. Классикалық әдебиет, философия және ғылыми басылымдарды оқу арқылы сөздік қор мен аналитикалық ойлауды "паталок" деңгейге көтеруге болады.</p>
+                </div>
+                <div class="topic-box">
+                    <h3>Mind & Body Aesthetics</h3>
+                    <p>Спорт пен бет күтімі — бұл өзіңе деген құрметтің көрінісі. Дұрыс тамақтану мен жүйелі жаттығу мидың өнімділігін арттырып, ұзақ уақыт бойы фокусты жоғалтпауға көмектеседі. Эстетика мен дисциплина — білімді адамның ажырамас бөлігі.</p>
+                </div>
+            </div>
 
-        <div class="thanks">
-            Рахмет, көңіл бұрғандарыңызға! 🤝
-        </div>
+            <div class="profile-wrap">
+                <img src="author_photo.jpg" alt="Toremurat" class="profile-img">
+                <div class="profile-bio">
+                    <h2>Zhanbolat Toremurat</h2>
+                    <p style="color: var(--gold); font-family: 'Noto Sans KR'; font-size: 1.1rem; margin: 10px 0;">지적인 리더 | Intellectual Leader</p>
+                    <p style="font-size: 1.1rem; font-style: italic;">"Білім — адамды биікке шығаратын саты, ал мәдениет — сол биікте ұстап тұратын тірек."</p>
+                    <p>Төремұрат — Моңғолия жастарының арасында білім мен руханиятты тең ұстап жүрген белсенді тұлға. Оның мақсаты — лицей оқушыларына жол көрсету, ғылыми бағыт беру және ұлттық құндылықтарды әлемдік деңгейде насихаттау. Техника мен руханияттың үйлесімі — біздің ұрпақтың басты миссиясы.</p>
+                    <a href="mailto:janbolattoremurat@gmail.com" class="btn" style="border: 1px solid var(--gold); color: var(--gold); padding: 15px 40px; text-decoration: none; display: inline-block; margin-top: 20px; font-family: 'Cinzel'; letter-spacing: 2px;">Contact for Guidance</a>
+                </div>
+            </div>
 
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 International Science-Technology Hub | Mongolia - Kazakhstan Connection</p>
-        <p style="font-size: 12px; opacity: 0.5;">Design created for the future generation.</p>
+    <footer style="text-align: center; padding: 60px; opacity: 0.4; font-size: 0.7rem; letter-spacing: 4px;">
+        EST. 2026 | TOREMURAT INTELLECTUAL HUB | GLOBAL STANDARDS
     </footer>
-
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'kk'}, 'google_translate_element');
-        }
-        function changeLang(code) {
-            var select = document.querySelector('.goog-te-combo');
-            if(select) {
-                select.value = code;
-                select.dispatchEvent(new Event('change'));
-            }
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
