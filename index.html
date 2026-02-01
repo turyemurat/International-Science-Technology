@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOREMURAT | Strategy & Alash Spirit</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
+    <title>TOREMURAT | Alash Academic Empire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --brown: #1a120b; --gold: #c5a059; --panel: #2d2013; --text: #f5f5f5; }
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body { margin: 0; background: var(--brown); color: var(--text); font-family: 'Lora', serif; line-height: 1.8; }
 
-        nav { background: rgba(26, 18, 11, 0.98); padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .lang-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.75rem; cursor: pointer; border: 1px solid var(--gold); padding: 5px 12px; transition: 0.4s; }
-        .lang-btn:hover { background: var(--gold); color: var(--brown); }
+        nav { background: rgba(26, 18, 11, 0.98); padding: 20px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .lang-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.8rem; cursor: pointer; border: 1px solid var(--gold); padding: 8px 15px; transition: 0.4s; font-weight: bold; }
+        .lang-btn:hover { background: var(--gold); color: var(--brown); box-shadow: 0 0 15px var(--gold); }
 
         header {
-            height: 50vh; background: linear-gradient(rgba(26, 18, 11, 0.8), var(--brown)), url('library_main.jpg') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            height: 65vh; background: linear-gradient(rgba(26, 18, 11, 0.75), var(--brown)), url('library_main.jpg') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 3px solid var(--gold);
         }
-        h1 { font-family: 'Cinzel'; font-size: clamp(2rem, 8vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 8px; }
+        h1 { font-family: 'Cinzel'; font-size: clamp(3rem, 10vw, 6rem); color: var(--gold); margin: 0; letter-spacing: 15px; text-shadow: 0 0 30px rgba(197, 160, 89, 0.4); }
+        .sub-header { font-family: 'Montserrat'; font-weight: 900; letter-spacing: 5px; color: #fff; text-transform: uppercase; margin-top: 10px; border-top: 1px solid var(--gold); padding-top: 10px; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .glass-panel { background: var(--panel); border: 1px solid var(--gold); padding: 40px 25px; margin-top: -80px; position: relative; z-index: 10; box-shadow: 0 40px 80px rgba(0,0,0,0.8); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .glass-panel { background: var(--panel); border: 2px solid var(--gold); padding: 60px 40px; margin-top: -150px; position: relative; z-index: 10; box-shadow: 0 50px 100px rgba(0,0,0,0.9); border-radius: 15px; }
 
-        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin: 50px 0 25px; text-align: center; }
-        .article-card { background: rgba(255,255,255,0.02); border-left: 3px solid var(--gold); padding: 25px; margin-bottom: 30px; }
+        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 2.2rem; border-bottom: 3px double var(--gold); padding-bottom: 15px; margin: 70px 0 40px; text-align: center; text-transform: uppercase; letter-spacing: 3px; }
+        .article-card { background: rgba(255,255,255,0.03); border-left: 5px solid var(--gold); padding: 40px; margin-bottom: 50px; border-radius: 0 20px 20px 0; transition: 0.3s; }
+        .article-card:hover { background: rgba(255,255,255,0.06); }
+        .article-card h3 { font-family: 'Cinzel'; color: var(--gold); font-size: 1.6rem; margin-top: 0; margin-bottom: 20px; }
         
-        .content-img { width: 100%; border-radius: 30px; border: 1px solid var(--gold); margin: 20px 0; }
-        .highlight { color: var(--gold); font-weight: 700; }
-        .btn-action { display: block; width: 100%; max-width: 350px; margin: 30px auto; padding: 15px; border: 2px solid var(--gold); color: var(--gold); font-family: 'Cinzel'; text-align: center; text-decoration: none; transition: 0.4s; font-weight: bold; }
-        .btn-action:hover { background: var(--gold); color: var(--brown); }
+        .content-img { width: 100%; border-radius: 50px; border: 2px solid var(--gold); margin: 30px 0; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
 
-        /* Final Manifest Style */
-        .alash-manifesto {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('eagle_background.jpg') center/cover;
-            border: 2px solid var(--gold); padding: 50px 30px; text-align: center; border-radius: 40px; margin-top: 60px;
+        .highlight { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
+        .btn-action { display: block; width: 100%; max-width: 450px; margin: 40px auto; padding: 25px; border: 2px solid var(--gold); color: var(--gold); font-family: 'Cinzel'; font-size: 1.1rem; text-align: center; text-decoration: none; transition: 0.5s; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; }
+        .btn-action:hover { background: var(--gold); color: var(--brown); box-shadow: 0 0 30px var(--gold); }
+
+        .method-box { background: rgba(0,0,0,0.3); padding: 30px; border: 1px dashed var(--gold); margin: 20px 0; border-radius: 15px; }
+
+        .manifesto-final {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('eagle_background.jpg') center/cover;
+            border: 3px solid var(--gold); padding: 80px 40px; text-align: center; border-radius: 60px; margin-top: 100px;
         }
-        .alash-manifesto h2 { font-family: 'Cinzel'; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; }
-        .alash-manifesto p { font-size: 1.2rem; font-style: italic; color: #fff; line-height: 2; }
+        .manifesto-final h2 { font-family: 'Cinzel'; color: var(--gold); font-size: 3rem; margin-bottom: 30px; }
+        .manifesto-final p { font-size: 1.4rem; font-style: italic; color: #fff; line-height: 2.2; }
 
-        @media (max-width: 768px) { .glass-panel { padding: 20px 15px; } h1 { font-size: 2.5rem; } }
+        .footer { text-align: center; padding: 80px; border-top: 2px solid var(--gold); margin-top: 100px; opacity: 0.8; font-family: 'Cinzel'; letter-spacing: 2px; }
+
+        @media (max-width: 768px) { .glass-panel { padding: 30px 20px; } h1 { font-size: 3.5rem; } .article-card { padding: 25px; } }
     </style>
 </head>
 <body>
@@ -54,44 +61,98 @@
 
     <header>
         <h1>TOREMURAT</h1>
-        <p style="color: var(--gold); letter-spacing: 3px;">GLOBAL ACADEMIC STRATEGY</p>
+        <div class="sub-header">Strategy • Leadership • Global Legacy</div>
     </header>
 
     <div class="container">
         <div class="glass-panel">
             
-            <h2 class="section-title">Academic & Digital Strategy</h2>
-            <img src="library_main.jpg" alt="Study Excellence" class="content-img">
+            <h2 class="section-title">The 12-Year Strategic Blueprint</h2>
             <div class="article-card">
-                <h3>ЕESH & GPA Excellence</h3>
-                <p>Баға — бұл сенің мүмкіндігің. ЭЕШ-тен 800 балл алу, IELTS-тан жоғары нәтиже көрсету және әлемдік гранттарды бағындыру — бұл құр қиял емес, нақты стратегия. Мен сендерге код жазудың жеңіл жолдарын, тілді тез меңгерудің әдістерін және шешім қабылдау өнерін үйретемін.</p>
+                <h3>Уақыт — Сенің Ең Үлкен Капиталың</h3>
+                <p>Моңғолияның 12 жылдық мектеп жүйесі — бұл жай ғана оқу емес, бұл әлемдік деңгейдегі маман болып қалыптасудың инкубаторы. Әрбір сыныпты стратегиялық деңгей ретінде қарастыр:</p>
+                <div class="method-box">
+                    <p>🔹 <span class="highlight">Бастауыш & Орта буын:</span> Логикалық ойлау мен фундаменталды математиканы шегелеп тастау.</p>
+                    <p>🔹 <span class="highlight">Жоғары буын (10-12 сынып):</span> Академиялық бағытты (STEM немесе Humanities) анықтап, ЭЕШ (EESH) және халықаралық емтихандарға (IELTS, SAT, TOPIK) фокус жасау.</p>
+                </div>
+                <p>12 жылдың соңында сен жай ғана аттестат емес, <span class="highlight">Жаһандық Бәсекеге Қабілетті Тұлға</span> ретінде шығуың тиіс.</p>
             </div>
 
-            <div class="article-card" style="border-left-color: #ff0000;">
-                <h3>YouTube: Knowledge Base</h3>
-                <p>Тіл мен технологияның ұштасқан жері. Нағыз практика мен "шоткый" лайфхактарды жіберіп алма.</p>
-                <a href="https://youtube.com/@toremurat" target="_blank" class="btn-action" style="border-color:#ff0000; color:#ff0000;">SUBSCRIBE TO CHANNEL</a>
+            <h2 class="section-title">Academic Warfare: GPA & EESH</h2>
+            <img src="library_main.jpg" alt="Excellence" class="content-img">
+            
+            <div class="article-card">
+                <h3>Елсэлтийн ерөнхий шалгалт (EESH) Mastery</h3>
+                <p>Мемлекеттік сынақтан 800 балл алу — бұл кездейсоқтық емес, бұл математикалық дәлдік. GPA 4.0 көрсеткішін сақтау сенің халықаралық университеттерге есігіңді айқара ашады.</p>
+                <div class="method-box">
+                    <h4 style="color:var(--gold)">Effective Study Techniques:</h4>
+                    <ul>
+                        <li><span class="highlight">Active Recall:</span> Ақпаратты жай оқыма, өзіңе сұрақ қою арқылы есте сақта.</li>
+                        <li><span class="highlight">Spaced Repetition:</span> Білімді ұмытпас үшін белгілі бір уақыт аралығында қайталап отыр.</li>
+                        <li><span class="highlight">EESH Simulation:</span> Соңғы 10 жылдың нұсқаларын таймермен шешіп, қатемен жұмыс істе.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="alash-manifesto">
+            <h2 class="section-title">World Conquest: Scholarships</h2>
+            <div class="article-card">
+                <h3>Global Grant Opportunities</h3>
+                <p>Әлемнің үздік университеттерінде тегін оқу — сенің қолыңда. Мына бағыттарды нысанаға ал:</p>
+                <ul>
+                    <li>🌍 <span class="highlight">Türkiye Bursları:</span> Түркияның ең беделді мемлекеттік гранты. Толық қаржыландыру.</li>
+                    <li>🌍 <span class="highlight">GKS (Global Korea Scholarship):</span> Кореяның технологиялық алпауыттарында оқу мүмкіндігі.</li>
+                    <li>🌍 <span class="highlight">Stipendium Hungaricum:</span> Еуропаның қақ ортасында, Венгрияда сапалы білім алу.</li>
+                </ul>
+                <p>Бұл гранттарға ие болу үшін сенің академиялық көрсеткішің мен қоғамдық белсенділігің (Extracurricular activities) үйлесімді болуы керек.</p>
+            </div>
+
+            <h2 class="section-title">Linguistic & Tech Dominance</h2>
+            <img src="news_tech.jpg" alt="Technology" class="content-img">
+            <div class="article-card">
+                <h3>Тіл — Қарым-қатынас Қаруы</h3>
+                <p>Ағылшын тілі (IELTS 7.5+) — әлемдік ғылым тілі. Корей тілі (TOPIK 5+) — инновация тілі. Бірақ ең бастысы — <span class="highlight">Ана тілің</span>. Өз тіліңді білу — сенің интеллектуалдық тереңдігіңді көрсетеді.</p>
+                <div class="method-box">
+                    <h4 style="color:var(--gold)">Digital Skills:</h4>
+                    <p>Код жазу (Programming) — бұл заманның жаңа әліпбиі. Python немесе JavaScript меңгеру арқылы сен локалдық деңгейден глобалдық деңгейге өтесің.</p>
+                </div>
+                <a href="https://youtube.com/@toremurat" target="_blank" class="btn-action" style="border-color: #ff0000; color: #ff0000;">YouTube: Strategy & Tech @toremurat</a>
+            </div>
+
+            <h2 class="section-title">The Leader's Mindset</h2>
+            <div class="article-card">
+                <h3>Шешім Қабылдау Өнері</h3>
+                <p>Әлемді бағындыру — нақты шешім қабылдаудан басталады. Көптің соңынан ерме, өз жолыңды сыз. Шешім қабылдағанда эмоцияға емес, <span class="highlight">аналитикалық деректерге</span> сүйен. Тәуекел ет, бірақ ол тәуекел есептелген (calculated risk) болсын.</p>
+                <p class="highlight">Оқуға тиісті кітаптар:</p>
+                <ul>
+                    <li>📘 "Атомдық әдеттер" (James Clear)</li>
+                    <li>📘 "Соғыс өнері" (Sun Tzu)</li>
+                    <li>📘 "Thinking, Fast and Slow" (Daniel Kahneman)</li>
+                </ul>
+                [attachment_0](attachment)
+            </div>
+
+            <div class="manifesto-final">
                 <h2>THE SPIRIT OF ALASH</h2>
                 <p>
                     "Мен — Моңғолия қазағымын, Алаштың айбынды ұрпағымын! <br> 
                     Көгімде қалықтаған <span class="highlight">Бүркіттей</span> білімімді ту қылып, қанатымды жаһанға кең жаямын. <br><br>
                     Мен мұнда сендерге жай ғана ақыл айту үшін емес, <span class="highlight">12 жылдық мектеп табалдырығында жинаған тәжірибеммен</span>, 
                     көрген-түйгеніммен және әлемдік деңгейдегі білім жолындағы барлық құпияларыммен бөлісу үшін келдім. <br><br>
-                    Бұл — тек бастамасы. Біз бірге әлемді бағындырамыз. Біздің рухымыз — білімде, күшіміз — бірлікте!"
+                    Биіктен көріну — біздің қанымызда бар қасиет. Шешім қабылда. Әрекет ет. Әлемді бағындыр! <br>
+                    <span class="highlight">БІЗ — БОЛАШАҚТЫҢ ИЕСІМІЗ!</span>"
                 </p>
-                <div style="font-family: 'Cinzel'; color: var(--gold); margin-top: 30px; font-size: 1.5rem; letter-spacing: 5px;">
+                <div style="font-family: 'Cinzel'; color: var(--gold); margin-top: 40px; font-size: 1.8rem; letter-spacing: 5px; font-weight: 900;">
                     ZHANBOLAT TOREMURAT
                 </div>
             </div>
+
+            <a href="mailto:janbolattoremurat@gmail.com" class="btn-action">МЕНТОРЛЫҚҚА ЖАЗЫЛУ</a>
 
         </div>
     </div>
 
     <div class="footer">
-        © 2026 ZHANBOLAT TOREMURAT | THE ELITE MONGOLIAN KAZAKH STRATEGIST
+        © 2026 ZHANBOLAT TOREMURAT | STRATEGY • HONOR • GLOBAL LEGACY
     </div>
 
     <script type="text/javascript">
