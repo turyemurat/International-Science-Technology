@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Science-Technology Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-brown: #3d2314;
+            --bg-color: #fdfaf5;
+            --accent-gold: #c5a059;
+            --text-main: #2d1b10;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg-color); color: var(--text-main); scroll-behavior: smooth; line-height: 1.6; }
+
+        /* ТІЛДЕР ЖӘНЕ ТУЛАР */
+        .language-flags {
+            background: white;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .flag-item { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; font-weight: 600; }
+        .flag-item img { width: 24px; height: 16px; border-radius: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+
+        header {
+            padding: 20px 5%;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('library_main.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 0; text-transform: uppercase; }
+
+        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
+
+        /* КЕҢЕЙТІЛГЕН ЖАҢАЛЫҚТАР */
+        .news-section { margin-bottom: 100px; }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .news-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .news-card img { width: 100%; height: 250px; object-fit: cover; }
+        .news-content { padding: 30px; }
+        .news-content h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-top: 0; color: var(--dark-brown); }
+
+        /* ҚОҢЫР КАРТОЧКА (СУРЕТТЕГІДЕЙ) */
+        .brown-box {
+            background-color: var(--dark-brown);
+            border-radius: 50px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            color: white;
+            margin-bottom: 100px;
+            flex-wrap: wrap;
+        }
+        .brown-box img { width: 450px; height: 350px; border-radius: 35px; object-fit: cover; }
+
+        /* АВТОР БӨЛІМІ (МОҢҒОЛИЯ - ЖАНБОЛАТ) */
+        .author-card {
+            background: white;
+            padding: 80px;
+            border-radius: 50px;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            margin-top: 100px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+        .author-img { width: 300px; height: 300px; border-radius: 40px; object-fit: cover; border: 8px solid var(--bg-color); }
+        .author-info { flex: 1; }
+        .author-info h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 0; color: var(--dark-brown); }
+        .tag-mongolia { background: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+
+        /* БАЙЛАНЫС */
+        .contact-area {
+            background: var(--dark-brown);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 50px;
+            margin: 50px 0;
+        }
+        .contact-area a { color: var(--accent-gold); font-size: 2rem; text-decoration: none; font-weight: 900; }
+
+        .thanks { text-align: center; padding: 100px 0; font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--dark-brown); opacity: 0.8; }
+
+        footer { background: #1a110a; color: white; padding: 50px; text-align: center; }
+
+        #google_translate_element { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="language-flags">
+        <div class="flag-item" onclick="changeLang('kk')"><img src="https://flagcdn.com/w40/kz.png"> Қазақша</div>
+        <div class="flag-item" onclick="changeLang('mn')"><img src="https://flagcdn.com/w40/mn.png"> Монгол</div>
+        <div class="flag-item" onclick="changeLang('en')"><img src="https://flagcdn.com/w40/us.png"> English</div>
+        <div class="flag-item" onclick="changeLang('tr')"><img src="https://flagcdn.com/w40/tr.png"> Türkçe</div>
+    </div>
+
+    <header>
+        <div class="logo" style="font-family: 'Playfair Display'; font-size: 1.8rem;">IST HUB</div>
+        <nav>
+            <a href="#news" style="text-decoration:none; color:var(--dark-brown); font-weight:bold;">ЖАҢАЛЫҚТАР</a>
+            <a href="#author" style="margin-left:30px; text-decoration:none; color:var(--dark-brown); font-weight:bold;">АВТОР</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>THANK YOU</h1>
+        <p style="font-size: 1.5rem; max-width: 700px;">Ғылым мен технология — адамзаттың ортақ мұрасы. Моңғолия мен Қазақстан жастарының білім ордасы.</p>
+    </section>
+
+    <div class="container">
+        
+        <div id="news" class="news-section">
+            <h2 style="font-family: 'Playfair Display'; font-size: 3rem; text-align: center; margin-bottom: 50px;">Ғылым Әлемінде</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="news_tech.jpg" alt="AI">
+                    <div class="news-content">
+                        <h3>Жасанды Интеллект: Жаңа Дәуір</h3>
+                        <p>Қазіргі таңда AI технологиялары медицинадан бастап ғарышты игеруге дейін барлық салада төңкеріс жасауда. Біз осы процестің ортасындамыз.</p>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="library_detail.jpg" alt="Books">
+                    <div class="news-content">
+                        <h3>Кітап - Сарқылмас Қазына</h3>
+                        <p>Жас ғалымдарға арналған ғылыми-танымал әдебиеттер тізімі мен оларды тиімді оқудың әдістері туралы кеңейтілген мәліметтер.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="brown-box">
+            <img src="library_main.jpg" alt="Science">
+            <div class="card-text">
+                <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; margin:0 0 20px 0;">Инновациялық Ізденіс</h2>
+                <p>Бұл хабтың негізгі мақсаты — жастарды ғылымға бағыттау, жаңа технологияларды игеруге көмектесу және халықаралық тәжірибемен бөлісу.</p>
+                <p style="color:var(--accent-gold); font-weight:bold; font-size: 1.2rem;">@janbolattoremurat</p>
+            </div>
+        </div>
+
+        <div class="author-card" id="author">
+            <img src="me.jpg" alt="Janbolat" class="author-img">
+            <div class="author-info">
+                <span class="tag-mongolia">МОНГОЛИЯ - АВТОР</span>
+                <h2>Жанболат Төремұрат</h2>
+                <p style="font-size: 1.2rem; margin-top: 20px;">
+                    Сәлем, бауырлар! Мен Моңғолияда тұратын бауырың Жанболатпын. Ғылым мен технологияға деген қызығушылығым осы жобаның басталуына түрткі болды. 
+                    Менің мақсатым — қай елде жүрсек те, қазақ жастарының білімі мен біліктілігін арттыруға атсалысу.
+                </p>
+                <p>Бұл хаб — біздің ортақ білім алаңымыз.</p>
+            </div>
+        </div>
+
+        <div class="contact-area">
+            <h3>Менімен байланыс:</h3>
+            <p>Сұрақтарыңыз немесе ұсыныстарыңыз болса, жазыңыз:</p>
+            <a href="mailto:janbolattoremurat@gmail.com">janbolattoremurat@gmail.com</a>
+        </div>
+
+        <div class="thanks">
+            Рахмет, көңіл бұрғандарыңызға! 🤝
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 International Science-Technology Hub | Mongolia - Kazakhstan Connection</p>
+        <p style="font-size: 12px; opacity: 0.5;">Design created for the future generation.</p>
+    </footer>
+
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'kk'}, 'google_translate_element');
+        }
+        function changeLang(code) {
+            var select = document.querySelector('.goog-te-combo');
+            if(select) {
+                select.value = code;
+                select.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
