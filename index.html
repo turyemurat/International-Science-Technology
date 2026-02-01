@@ -3,106 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOREMURAT | Strategic Academic & Cultural Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+    <title>TOREMURAT | Academic Strategy Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #0d0d0d; --gold: #c5a059; --panel: #1a1512; --text: #e5e5e5; }
-        * { box-sizing: border-box; }
-        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; line-height: 1.8; }
-        
+        :root { --dark-bg: #0a0a0a; --gold: #c5a059; --accent: #1e1e1e; --white: #f4f4f4; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { margin: 0; background: var(--dark-bg); color: var(--white); font-family: 'Montserrat', sans-serif; line-height: 1.8; position: relative; top: 0 !important; }
+
+        /* Google Translate Hiding */
+        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none; }
+
+        /* Navigation & Language Switcher */
+        nav { background: rgba(0,0,0,0.95); padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gold); display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        nav a, .lang-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.7rem; letter-spacing: 2px; cursor: pointer; background: none; border: 1px solid transparent; padding: 5px 10px; }
+        .lang-btn:hover { border: 1px solid var(--gold); }
+
+        /* Header */
         header {
-            height: 70vh; background: linear-gradient(rgba(0,0,0,0.7), var(--bg)), url('library_main.jpg') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 2px solid var(--gold);
+            height: 80vh; background: linear-gradient(rgba(0,0,0,0.8), var(--dark-bg)), url('library_main.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
-        h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 7vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 8px; }
+        h1 { font-family: 'Cinzel'; font-size: clamp(3rem, 10vw, 6rem); color: var(--gold); margin: 0; letter-spacing: 10px; }
 
-        .container { max-width: 1200px; margin: -100px auto 100px; padding: 0 20px; }
-        .glass-panel { background: rgba(26, 21, 18, 0.98); border: 1px solid var(--gold); padding: 60px 40px; box-shadow: 0 50px 100px rgba(0,0,0,0.9); }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
 
-        .author-box { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 80px; padding-bottom: 40px; border-bottom: 1px solid rgba(197,160,89,0.2); }
-        .author-box img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; flex-shrink: 0; }
+        /* Profile Section (No Robot Image) */
+        .mentor-intro { background: var(--accent); padding: 50px; border: 1px solid var(--gold); margin-top: -100px; position: relative; z-index: 10; text-align: center; }
+        .mentor-intro h2 { font-family: 'Cinzel'; color: var(--gold); font-size: 2.5rem; margin-bottom: 10px; }
+
+        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 2.2rem; text-align: center; margin: 80px 0 40px; border-bottom: 1px solid var(--gold); display: inline-block; width: 100%; padding-bottom: 10px; }
         
-        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 2.2rem; border-left: 5px solid var(--gold); padding-left: 20px; margin: 60px 0 30px; }
+        /* Grid Content */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .content-card { background: #151515; border: 1px solid rgba(197,160,89,0.2); padding: 30px; border-radius: 4px; }
+        .content-card h3 { color: var(--gold); font-family: 'Cinzel'; font-size: 1.3rem; margin-bottom: 15px; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .info-card { background: var(--panel); padding: 35px; border: 1px solid rgba(197,160,89,0.1); border-radius: 4px; transition: 0.4s; }
-        .info-card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .info-card h3 { color: var(--gold); font-family: 'Cinzel'; margin-top: 0; font-size: 1.4rem; }
+        .roadmap-box { background: rgba(197, 160, 89, 0.05); border: 1px solid var(--gold); padding: 40px; margin: 40px 0; border-left: 8px solid var(--gold); }
 
-        .banner { background: rgba(197, 160, 89, 0.05); border: 1px solid var(--gold); padding: 40px; margin: 40px 0; }
-        .korean-block { font-family: 'Noto Sans KR', sans-serif; background: #000; padding: 20px; border-left: 4px solid #fff; margin: 20px 0; }
+        .highlight { color: var(--gold); font-weight: 600; }
+        .footer { text-align: center; padding: 60px; opacity: 0.3; font-size: 0.7rem; border-top: 1px solid var(--gold); margin-top: 100px; }
 
-        .full-text { text-align: justify; margin-bottom: 30px; color: #ccc; }
-        .btn { display: inline-block; padding: 15px 40px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-family: 'Cinzel'; letter-spacing: 2px; transition: 0.3s; margin-top: 20px; }
-        .btn:hover { background: var(--gold); color: var(--bg); }
-
-        @media (max-width: 768px) { .author-box { flex-direction: column; align-items: center; text-align: center; } .glass-panel { padding: 30px 20px; } }
+        @media (max-width: 768px) { h1 { font-size: 3rem; } .mentor-intro { padding: 30px; } }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>TOREMURAT</h1>
-    <p style="letter-spacing: 5px; color: var(--gold);">STRATEGIC YOUTH MENTORSHIP</p>
-</header>
+    <nav>
+        <div onclick="doGTranslate('en|kk')" class="lang-btn">🇰🇿 KAZAKH</div>
+        <div onclick="doGTranslate('en|mn')" class="lang-btn">🇲🇳 MONGOLIAN</div>
+        <div onclick="doGTranslate('en|en')" class="lang-btn">🇺🇸 ENGLISH</div>
+        <div onclick="doGTranslate('en|ko')" class="lang-btn">🇰🇷 KOREAN</div>
+    </nav>
 
-<div class="container">
-    <div class="glass-panel">
+    <div id="google_translate_element"></div>
+
+    <header>
+        <h1>TOREMURAT</h1>
+        <p style="letter-spacing: 5px; color: var(--gold); font-family: 'Cinzel';">Strategic Education Hub</p>
+    </header>
+
+    <div class="main-container">
         
-        <div class="author-box">
-            <img src="author_photo.jpg" alt="Toremurat">
-            <div>
-                <h2 style="font-family: 'Cinzel'; color: var(--gold); margin: 0; font-size: 2.5rem;">Zhanbolat Toremurat</h2>
-                <p style="color: #a68942; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Global Academic Strategist | MNG-KAZ Liaison</p>
-                <p class="full-text">I am dedicated to bridging the gap between traditional heritage and modern technological advancement. My mission is to empower the Mongolian-Kazakh youth by providing a structured roadmap to international education, high-tech mastery, and economic self-sufficiency.</p>
-                <div class="korean-block">지적인 성장은 끝이 없으며, 우리는 세계적인 무대에서 우리의 문화를 지켜나가야 합니다. (Intellectual growth is endless, and we must preserve our culture on the global stage.)</div>
+        <div class="mentor-intro">
+            <h2>Zhanbolat Toremurat</h2>
+            <p class="highlight">Global Academic Strategist | Korean Language Expert</p>
+            <p>Менің платформам — Моңғолия мен Қазақстанның жастарын әлемдік деңгейдегі біліммен қаруландыруға арналған. 12 жылдық мектеп өмірін қалай тиімді өткізу керек? Қай мемлекетте тегін оқуға болады? Технология арқылы болашақты қалай құрамыз? Осы сұрақтардың жауабын осы жерден табасың.</p>
+        </div>
+
+        <h2 class="section-title">12-Year Academic Roadmap</h2>
+        <div class="roadmap-box">
+            <p><span class="highlight">Early Years (1-6):</span> Тілдік фундамент қалау. Ағылшын тілін еркін меңгеру және математикалық базаны нығайту.</p>
+            <p><span class="highlight">Development Years (7-9):</span> Техникалық бағытты таңдау. IT, Инженерия немесе Бизнес. Python немесе Data Science негіздерін үйрену.</p>
+            <p><span class="highlight">Elite Years (10-12):</span> Халықаралық емтихандар. IELTS 7.5+, SAT 1500+, TOPIK 5-6. Университетке грант алу стратегиясын жасау.</p>
+        </div>
+
+        <h2 class="section-title">Top Universities & Grants</h2>
+        <div class="grid-container">
+            <div class="content-card">
+                <h3>South Korea (GKS)</h3>
+                <p>SNU, KAIST және Korea University сияқты ТОП орындарда тегін оқу жолдары. GKS стипендиясы арқылы барлық шығынды жабу мүмкіндігі.</p>
+            </div>
+            <div class="content-card">
+                <h3>Germany (DAAD)</h3>
+                <p>Германияның техникалық университеттерінде (TU9) тегін білім алу. Неміс және ағылшын тілді бағдарламалардың артықшылықтары.</p>
+            </div>
+            <div class="content-card">
+                <h3>USA & Europe</h3>
+                <p>Ivy League және MIT-ке түсу үшін портфолио дайындау. Венгрияның (Stipendium Hungaricum) және Түркияның (YTB) гранттары.</p>
             </div>
         </div>
 
-        <h2 class="section-title">The 12-Year Academic Roadmap</h2>
-        <div class="full-text">
-            For students in the Mongolian education system, the 12-year cycle is not just a preparation for a diploma; it is the most critical period for "Asset Building." 
-            * **Years 1-6:** Focus on linguistic foundations and logical thinking through Mathematics. 
-            * **Years 7-9:** Introduction to coding and scientific research. This is where you identify your niche—be it BioTech, FinTech, or Engineering.
-            * **Years 10-12:** Portfolio management. Preparing for SAT, IELTS, and TOPIK. My platform provides a month-by-month checklist to ensure you meet the deadlines for global scholarship windows.
-        </div>
-
-        <div class="grid-3">
-            <div class="info-card">
-                <h3>Global Scholarships</h3>
-                <p>We analyze programs like **GKS (South Korea)**, **Turkiye Burslari**, and **Stipendium Hungaricum**. I provide deep insights into writing "Statement of Purpose" (SOP) letters that stand out to admissions committees in Seoul and beyond.</p>
+        <h2 class="section-title">Knowledge & Discipline</h2>
+        <div class="grid-container">
+            <div class="content-card">
+                <h3>Essential Reading</h3>
+                <p>1. <b>Atomic Habits</b> - Тәртіп үшін.<br>2. <b>Zero to One</b> - Стартап және бизнес.<br>3. <b>Deep Work</b> - Фокус сақтау.</p>
             </div>
-            <div class="info-card">
-                <h3>Economic Vision</h3>
-                <p>Education must serve the economy. Our focus is on **Sustainable Tourism** in Mongolia and **Agro-Business Tech**. We aim to build businesses that utilize international standards to promote Mongolian heritage globally.</p>
+            <div class="content-card">
+                <h3>Korean Language Mentorship</h3>
+                <p>Корей тілін нөлден бастап TOPIK 6 деңгейіне дейін жеткізудің авторлық методикасы. Байланысқа шығып, кеңес ал.</p>
             </div>
-            <div class="info-card">
-                <h3>Tech & AI Integration</h3>
-                <p>Technology is the new literacy. We teach students how to use **Artificial Intelligence** as a research partner, not just a tool. Understanding Prompt Engineering and Data Logic is mandatory for the next generation.</p>
+            <div class="content-card">
+                <h3>Technology & Economy</h3>
+                <p>Жасанды интеллектті қолдану және Моңғолияның туризмі мен бизнесін дамытуға үлес қосу стратегиялары.</p>
             </div>
-        </div>
-
-        <h2 class="section-title">Mastering Global Languages</h2>
-        <div class="banner">
-            <p><strong>Language Mastery (English & Korean):</strong> English is your gate to information, while Korean is your gate to high-tech education. My methodology for learning Korean involves "Contextual Immersive Learning." I offer guidance for TOPIK I-II and emphasize the importance of technical vocabulary.</p>
-            <p>To the youth of Mongolia: Do not just learn words; learn the philosophy behind the language. My contact below is open for students seeking a breakthrough in their language skills.</p>
-        </div>
-
-        <h2 class="section-title">Cultural Identity & Future</h2>
-        <div class="full-text">
-            Біздің басты мақсатымыз — әлемдік технологияны меңгерген, бірақ өз ұлтының иісін сақтаған зиялы ұрпақ тәрбиелеу. Моңғолия қазақтарының бірегей мәдениеті — біздің халықаралық аренадағы "Unique Selling Point" (ерекшелігіміз). Білімді тек мансап үшін емес, елдің экономикасын, бизнесін және туризмін көтеру үшін алуымыз керек. 
-        </div>
-
-        <div style="text-align: center;">
-            <a href="mailto:janbolattoremurat@gmail.com" class="btn">Connect for Strategic Guidance</a>
         </div>
 
     </div>
-</div>
 
-<footer style="text-align: center; padding: 60px; opacity: 0.4; font-size: 0.7rem; letter-spacing: 4px;">
-    &copy; 2026 TOREMURAT ACADEMIC HUB | MONGOLIA-KAZAKHSTAN | ALL RIGHTS RESERVED
-</footer>
+    <div class="footer">
+        &copy; 2026 TOREMURAT | GLOBAL STRATEGY HUB
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+        }
+        function doGTranslate(lang_pair) {
+            if(lang_pair.value) lang_pair=lang_pair.value;
+            if(lang_pair=='') return;
+            var lang=lang_pair.split('|')[1];
+            var teCombo = document.querySelector('.goog-te-combo');
+            if(teCombo == null || teCombo.value == null) {
+                setTimeout(function(){ doGTranslate(lang_pair); }, 500);
+            } else {
+                teCombo.value = lang;
+                teCombo.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
