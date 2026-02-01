@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +18,9 @@
             height: 65vh; background: linear-gradient(rgba(26, 18, 11, 0.75), var(--brown)), url('library_main.jpg') center/cover;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 3px solid var(--gold);
         }
-        h1 { font-family: 'Cinzel'; font-size: clamp(3rem, 10vw, 6rem); color: var(--gold); margin: 0; letter-spacing: 15px; text-shadow: 0 0 30px rgba(197, 160, 89, 0.4); }
-        .sub-header { font-family: 'Montserrat'; font-weight: 900; letter-spacing: 5px; color: #fff; text-transform: uppercase; margin-top: 10px; border-top: 1px solid var(--gold); padding-top: 10px; }
+        /* Fixed Title Style */
+        h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 8vw, 5.5rem); color: var(--gold); margin: 0; letter-spacing: 12px; text-shadow: 0 0 30px rgba(197, 160, 89, 0.4); line-height: 1.1; padding-bottom: 5px; }
+        .sub-header { font-family: 'Montserrat'; font-weight: 900; letter-spacing: 5px; color: #fff; text-transform: uppercase; margin-top: 5px; border-top: 1px solid var(--gold); padding-top: 10px; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         .glass-panel { background: var(--panel); border: 2px solid var(--gold); padding: 60px 40px; margin-top: -150px; position: relative; z-index: 10; box-shadow: 0 50px 100px rgba(0,0,0,0.9); border-radius: 15px; }
@@ -46,13 +47,12 @@
 
         .footer { text-align: center; padding: 80px; border-top: 2px solid var(--gold); margin-top: 100px; opacity: 0.8; font-family: 'Cinzel'; letter-spacing: 2px; }
 
-        /* Жаңа стильдер */
         .badge { display: inline-block; background: var(--gold); color: var(--brown); padding: 2px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem; margin-bottom: 10px; }
         .step-list { list-style: none; padding: 0; }
         .step-list li { margin-bottom: 20px; padding-left: 40px; position: relative; }
         .step-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-size: 1.5rem; font-weight: bold; }
 
-        @media (max-width: 768px) { .glass-panel { padding: 30px 20px; } h1 { font-size: 3.5rem; } .article-card { padding: 25px; } }
+        @media (max-width: 768px) { .glass-panel { padding: 30px 20px; } h1 { font-size: 2.8rem; letter-spacing: 5px; } .article-card { padding: 25px; } }
     </style>
 </head>
 <body>
@@ -77,13 +77,13 @@
             <h2 class="section-title">The 12-Year Strategic Blueprint</h2>
             <div class="article-card">
                 <div class="badge">janbolattoremurat@ insights</div>
-                <h3>Уақыт — Сенің Ең Үлкен Капиталың</h3>
-                <p>Моңғолияның 12 жылдық мектеп жүйесі — бұл жай ғана оқу емес, бұл әлемдік деңгейдегі маман болып қалыптасудың инкубаторы. Әрбір сыныпты стратегиялық деңгей ретінде қарастыр:</p>
+                <h3>Time — Your Greatest Capital</h3>
+                <p>The 12-year school system in Mongolia is not just education; it is an incubator for becoming a world-class professional. View every grade as a strategic level:</p>
                 <div class="method-box">
-                    <p>🔹 <span class="highlight">Бастауыш & Орта буын:</span> Логикалық ойлау мен фундаменталды математиканы шегелеп тастау. Негіз қаланбаса, ғимарат құлайды.</p>
-                    <p>🔹 <span class="highlight">Жоғары буын (10-12 сынып):</span> Академиялық бағытты (STEM немесе Humanities) анықтап, ЭЕШ (EESH) және халықаралық емтихандарға (IELTS, SAT, TOPIK) фокус жасау.</p>
+                    <p>🔹 <span class="highlight">Primary & Middle School:</span> Anchor logical thinking and fundamental mathematics. Without a foundation, the building collapses.</p>
+                    <p>🔹 <span class="highlight">High School (Grades 10-12):</span> Define your academic path (STEM or Humanities) and focus intensely on EESH and international exams (IELTS, SAT, TOPIK).</p>
                 </div>
-                <p>12 жылдың соңында сен жай ғана аттестат емес, <span class="highlight">Жаһандық Бәсекеге Қабілетті Тұлға</span> ретінде шығуың тиіс. janbolattoremurat@ сенің әр қадамыңды бақылап, бағыт береді.</p>
+                <p>By the end of 12 years, you should emerge not just with a diploma, but as a <span class="highlight">Globally Competitive Individual</span>. janbolattoremurat@ will monitor your every step and provide guidance.</p>
             </div>
 
             <h2 class="section-title">EESH Conquest: 800 Points Strategy</h2>
@@ -91,22 +91,22 @@
             
             <div class="article-card">
                 <div class="badge">janbolattoremurat@ core advice</div>
-                <h3>Елсэлтийн ерөнхий шалгалт (EESH) Mastery</h3>
-                <p>Мемлекеттік сынақтан 800 балл алу — бұл кездейсоқтық емес, бұл математикалық дәлдік. Міне, нақты мектеп оқушысына керек кеңестер:</p>
+                <h3>General Entrance Exam (EESH) Mastery</h3>
+                <p>Scoring 800 points on the state exam is not a coincidence; it is mathematical precision. Here are the core tactics for every student:</p>
                 
                 <ul class="step-list">
-                    <li><span class="highlight">Спецификацияны зертте:</span> Әр пәннің қандай тақырыптардан тұратынын жатқа біл. Бос ақпаратқа уақыт кетірме.</li>
-                    <li><span class="highlight">Кері жоспарлау:</span> Емтиханға дейін қанша күн қалды? Тақырыптарды сол күндерге бөл.</li>
-                    <li><span class="highlight">Қатемен жұмыс:</span> Тест тапсырған соң дұрыс жауапқа емес, қатеңе қуан. Қатең — сенің өсу нүктең.</li>
-                    <li><span class="highlight">Тайм-менеджмент:</span> Үйде тест шешкенде уақытты 15 минутқа аз қой. Емтихандағы стресс уақытты жеп қояды.</li>
+                    <li><span class="highlight">Study the Specifications:</span> Know exactly which topics are included for each subject. Do not waste time on irrelevant info.</li>
+                    <li><span class="highlight">Reverse Planning:</span> How many days left until the exam? Divide your topics by those days.</li>
+                    <li><span class="highlight">Error Analysis:</span> After a test, don't celebrate the correct answers; celebrate the mistakes. Your errors are your growth points.</li>
+                    <li><span class="highlight">Time Management:</span> When practicing at home, set your timer 15 minutes shorter. Exam stress eats your time.</li>
                 </ul>
 
                 <div class="method-box">
                     <h4 style="color:var(--gold)">Effective Study Techniques from janbolattoremurat@:</h4>
                     <ul>
-                        <li><span class="highlight">Active Recall:</span> Ақпаратты жай оқыма, өзіңе сұрақ қою арқылы есте сақта.</li>
-                        <li><span class="highlight">Spaced Repetition:</span> Білімді ұмытпас үшін белгілі бір уақыт аралығында қайталап отыр.</li>
-                        <li><span class="highlight">EESH Simulation:</span> Соңғы 10 жылдың нұсқаларын таймермен шешіп, қатемен жұмыс істе.</li>
+                        <li><span class="highlight">Active Recall:</span> Do not just read information; quiz yourself to solidify memory.</li>
+                        <li><span class="highlight">Spaced Repetition:</span> Review knowledge at set intervals to prevent forgetting.</li>
+                        <li><span class="highlight">EESH Simulation:</span> Solve the last 10 years of exam versions with a timer and master every mistake.</li>
                     </ul>
                 </div>
             </div>
@@ -115,24 +115,30 @@
             <div class="article-card">
                 <div class="badge">janbolattoremurat@ global map</div>
                 <h3>Global Grant Opportunities</h3>
-                <p>Әлемнің үздік университеттерінде тегін оқу — сенің қолыңда. Мына бағыттарды нысанаға ал:</p>
+                <p>Studying for free at the world's best universities is within your reach. Target these pathways:</p>
                 <ul>
-                    <li>🌍 <span class="highlight">Türkiye Bursları:</span> Түркияның ең беделді мемлекеттік гранты. Толық қаржыландыру.</li>
-                    <li>🌍 <span class="highlight">GKS (Global Korea Scholarship):</span> Кореяның технологиялық алпауыттарында оқу мүмкіндігі.</li>
-                    <li>🌍 <span class="highlight">Stipendium Hungaricum:</span> Еуропаның қақ ортасында, Венгрияда сапалы білім алу.</li>
+                    <li>🌍 <span class="highlight">Türkiye Bursları:</span> Turkey’s most prestigious government scholarship. Full funding.</li>
+                    <li>🌍 <span class="highlight">GKS (Global Korea Scholarship):</span> Opportunities to study in South Korea's tech giants.</li>
+                    <li>🌍 <span class="highlight">Stipendium Hungaricum:</span> Quality education in the heart of Europe, Hungary.</li>
                 </ul>
-                <p>Бұл гранттарға ие болу үшін сенің академиялық көрсеткішің мен қоғамдық белсенділігің (Extracurricular activities) үйлесімді болуы керек. Portfolio жинауды 9-сыныптан баста.</p>
+                <p>To win these grants, your academic performance and extracurricular activities must be balanced. Start building your portfolio in Grade 9.</p>
             </div>
 
             <h2 class="section-title">Linguistic & Tech Dominance</h2>
             <img src="news_tech.jpg" alt="Technology" class="content-img">
             <div class="article-card">
                 <div class="badge">janbolattoremurat@ weapons</div>
-                <h3>Тіл — Қарым-қатынас Қаруы</h3>
-                <p>Ағылшын тілі (IELTS 7.5+) — әлемдік ғылым тілі. Корей тілі (TOPIK 5+) — инновация тілі. Бірақ ең бастысы — <span class="highlight">Ана тілің</span>. Өз тіліңді білу — сенің интеллектуалдық тереңдігіңді көрсетеді.</p>
+                <h3>Language — A Weapon of Communication</h3>
+                <p>English (IELTS 7.5+) is the language of global science. Korean (TOPIK 5+) is the language of innovation. But most importantly, <span class="highlight">Mastering your native tongue</span> shows intellectual depth.</p>
+                
+                <div class="method-box">
+                    <h4 style="color:var(--gold)">Korean Language Mastery:</h4>
+                    <p>I will teach you how to <span class="highlight">learn Korean fast</span> and significantly <span class="highlight">improve your speaking skills</span>. To master natural conversation and reach fluency, contact me directly via Gmail.</p>
+                </div>
+
                 <div class="method-box">
                     <h4 style="color:var(--gold)">Digital Skills:</h4>
-                    <p>Код жазу (Programming) — бұл заманның жаңа әліпбиі. Python немесе JavaScript меңгеру арқылы сен локалдық деңгейден глобалдық деңгейге өтесің. janbolattoremurat@ сенің IT әлеміндегі жол көрсетушің.</p>
+                    <p>Programming is the new alphabet of this era. By mastering Python or JavaScript, you transition from a local level to a global power. janbolattoremurat@ is your guide in the IT world.</p>
                 </div>
                 <a href="https://youtube.com/@toremurat" target="_blank" class="btn-action" style="border-color: #ff0000; color: #ff0000;">YouTube: Strategy & Tech @toremurat</a>
             </div>
@@ -140,12 +146,12 @@
             <h2 class="section-title">The Leader's Mindset</h2>
             <div class="article-card">
                 <div class="badge">janbolattoremurat@ philosophy</div>
-                <h3>Шешім Қабылдау Өнері</h3>
-                <p>Әлемді бағындыру — нақты шешім қабылдаудан басталады. Көптің соңынан ерме, өз жолыңды сыз. Шешім қабылдағанда эмоцияға емес, <span class="highlight">аналитикалық деректерге</span> сүйен. Тәуекел ет, бірақ ол тәуекел есептелген (calculated risk) болсын.</p>
-                <p class="highlight">Оқуға тиісті кітаптар (janbolattoremurat@ ұсынады):</p>
+                <h3>The Art of Decision Making</h3>
+                <p>Conquering the world begins with making firm decisions. Do not follow the crowd; forge your own path. Base your choices on <span class="highlight">analytical data</span>, not just emotions. Take risks, but ensure they are calculated risks.</p>
+                <p class="highlight">Recommended Books (by janbolattoremurat@):</p>
                 <ul>
-                    <li>📘 "Атомдық әдеттер" (James Clear)</li>
-                    <li>📘 "Соғыс өнері" (Sun Tzu)</li>
+                    <li>📘 "Atomic Habits" (James Clear)</li>
+                    <li>📘 "The Art of War" (Sun Tzu)</li>
                     <li>📘 "Thinking, Fast and Slow" (Daniel Kahneman)</li>
                 </ul>
             </div>
@@ -154,28 +160,27 @@
                 <div class="badge">THE ULTIMATE MANIFESTO BY JANBOLATTOREMURAT@</div>
                 <h2>THE SPIRIT OF ALASH</h2>
                 <p>
-                    "Сен — жай ғана оқушы емессің. Сен — империя құрушысың! <br><br>
-                    Айналаңдағы адамдардың 'мүмкін емес' дегеніне құлақ аспа. Олар өз қорқыныштарын саған таңғысы келеді. <br>
-                    Бірақ сенің қаныңда <span class="highlight">Шыңғыс ханның айбыны</span>, <span class="highlight">Алаш арыстарының білімі</span> бар! <br><br>
-                    Мен мұнда сендерге жай ғана ақыл айту үшін емес, <span class="highlight">12 жылдық мектеп табалдырығында жинаған тәжірибеммен</span>, 
-                    көрген-түйгеніммен және әлемдік деңгейдегі білім жолындағы барлық құпияларыммен бөлісу үшін келдім. <br><br>
-                    Есте сақта: Жеңіс — дарындыларға емес, табандыларға келеді. Төсегіңнен тұрғанда 'бүгін мен кешегіден жақсырақ боламын' деп тұр. <br>
-                    Биіктен көріну — біздің қанымызда бар қасиет. Шешім қабылда. Әрекет ет. Әлемді бағындыр! <br>
-                    <span class="highlight">БІЗ — БОЛАШАҚТЫҢ ИЕСІМІЗ!</span>"
+                    "You are not just a student. You are an empire builder! <br><br>
+                    Do not listen to those who say 'impossible.' They only want to project their fears onto you. <br>
+                    But you carry the <span class="highlight">Majesty of Genghis Khan</span> and the <span class="highlight">Wisdom of Alash leaders</span> in your blood! <br><br>
+                    I am here not just to give advice, but to share the <span class="highlight">experience gathered within the 12-year school walls</span>, 
+                    my observations, and all the secrets of the world-class education path. <br><br>
+                    Remember: Victory belongs to the persistent, not just the gifted. Rise every morning and strive to be better than yesterday. <br>
+                    Excelling is our heritage. Decide. Act. Conquer the world! <br>
+                    <span class="highlight">WE ARE THE MASTERS OF THE FUTURE!</span>"
                 </p>
                 <div style="font-family: 'Cinzel'; color: var(--gold); margin-top: 40px; font-size: 1.8rem; letter-spacing: 5px; font-weight: 900;">
                     ZHANBOLAT TOREMURAT
                 </div>
             </div>
 
-            <a href="mailto:janbolattoremurat@gmail.com" class="btn-action">JANBOLATTOREMURAT@ МЕНТОРЛЫҚҚА ЖАЗЫЛУ</a>
+            <a href="mailto:janbolattoremurat@gmail.com" class="btn-action">CONTACT: janbolattoremurat@gmail.com</a>
 
         </div>
     </div>
 
     <div class="footer">
-        © 2026 ZHANBOLAT TOREMURAT | STRATEGY • HONOR • GLOBAL LEGACY <br>
-        DESIGNED BY JANBOLATTOREMURAT@
+        © 2026 ZHANBOLAT TOREMURAT | STRATEGY • HONOR • GLOBAL LEGACY
     </div>
 
     <script type="text/javascript">
