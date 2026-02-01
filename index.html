@@ -3,130 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOREMURAT | Strategic Academic Guide</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>TOREMURAT | Strategy, Character & Legacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --brown: #1a120b; --gold: #c5a059; --panel: #2d2013; --text: #f5f5f5; }
         * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { margin: 0; background: var(--brown); color: var(--text); font-family: 'Lora', serif; line-height: 1.8; position: relative; top: 0 !important; }
+        body { margin: 0; background: var(--brown); color: var(--text); font-family: 'Lora', serif; line-height: 1.8; overflow-x: hidden; }
 
-        /* Google Translate UI Hiding */
-        .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon { display: none !important; }
-        body { top: 0px !important; }
-        #google_translate_element { display: none; }
+        nav { background: rgba(26, 18, 11, 0.98); padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .lang-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.7rem; cursor: pointer; border: 1px solid var(--gold); padding: 5px 10px; transition: 0.5s; background: transparent; }
+        .lang-btn:hover { background: var(--gold); color: var(--brown); box-shadow: 0 0 10px var(--gold); }
 
-        /* Navigation */
-        nav { background: rgba(26, 18, 11, 0.95); padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gold); display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .lang-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.75rem; cursor: pointer; border: 1px solid transparent; padding: 5px 12px; transition: 0.3s; }
-        .lang-btn:hover { border: 1px solid var(--gold); background: rgba(197, 160, 89, 0.1); }
-
-        /* Header */
         header {
-            height: 70vh; background: linear-gradient(rgba(26, 18, 11, 0.8), var(--brown)), url('library_main.jpg') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; border-bottom: 2px solid var(--gold);
+            height: 60vh; background: linear-gradient(rgba(26, 18, 11, 0.85), var(--brown)), url('library_main.jpg') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
-        h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 10px; }
+        h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 12px; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .glass-panel { background: var(--panel); border: 2px solid var(--gold); padding: 40px 25px; margin-top: -100px; position: relative; z-index: 10; box-shadow: 0 50px 100px rgba(0,0,0,0.9); }
 
-        /* Content Sections */
-        .glass-panel { background: var(--panel); border: 1px solid var(--gold); padding: 50px 40px; margin-top: -100px; position: relative; z-index: 10; box-shadow: 0 50px 100px rgba(0,0,0,0.7); }
-        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 2rem; border-bottom: 1px solid var(--gold); padding-bottom: 15px; margin: 60px 0 30px; text-align: center; }
+        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 1.8rem; border-bottom: 3px double var(--gold); padding-bottom: 8px; margin: 50px 0 25px; text-align: center; text-transform: uppercase; }
+        .article-card { background: rgba(0,0,0,0.2); border: 1px solid rgba(197, 160, 89, 0.3); padding: 30px; margin-bottom: 30px; border-radius: 15px; }
         
-        .article-card { background: rgba(255,255,255,0.03); border-left: 4px solid var(--gold); padding: 30px; margin-bottom: 40px; }
-        .article-card h3 { color: var(--gold); font-family: 'Cinzel'; margin-top: 0; }
-        
-        .highlight { color: var(--gold); font-weight: 600; }
-        .btn { display: inline-block; padding: 15px 45px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.8rem; letter-spacing: 2px; transition: 0.4s; margin-top: 20px; background: transparent; cursor: pointer; }
-        .btn:hover { background: var(--gold); color: var(--brown); font-weight: bold; }
+        .content-img { width: 100%; border-radius: 40px; border: 2px solid var(--gold); margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
 
-        ul { padding-left: 20px; }
-        li { margin-bottom: 15px; }
+        .highlight { color: var(--gold); font-weight: 700; }
+        .quote { font-style: italic; color: #bbb; border-left: 3px solid var(--gold); padding-left: 20px; margin: 20px 0; }
 
-        .footer { text-align: center; padding: 80px; opacity: 0.5; font-size: 0.8rem; letter-spacing: 3px; border-top: 1px solid var(--gold); margin-top: 80px; }
+        .btn-action { display: block; width: 100%; max-width: 350px; margin: 30px auto; padding: 18px; background: transparent; border: 2px solid var(--gold); color: var(--gold); font-family: 'Cinzel'; font-size: 0.9rem; font-weight: 900; text-align: center; text-decoration: none; transition: 0.4s; letter-spacing: 2px; }
+        .btn-action:hover { background: var(--gold); color: var(--brown); box-shadow: 0 0 20px var(--gold); }
 
-        @media (max-width: 768px) { .glass-panel { padding: 30px 20px; } h1 { font-size: 3rem; } }
+        .motivation-box { background: linear-gradient(45deg, #2d2013, #1a120b); border: 1px dashed var(--gold); padding: 25px; text-align: center; margin: 40px 0; border-radius: 20px; }
+
+        .footer { text-align: center; padding: 50px; border-top: 1px solid var(--gold); opacity: 0.6; font-size: 0.8rem; }
+
+        @media (max-width: 768px) { .glass-panel { padding: 25px 15px; } h1 { font-size: 3rem; letter-spacing: 5px; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div onclick="doGTranslate('en|mn')" class="lang-btn">MONGOLIAN</div>
         <div onclick="doGTranslate('en|kk')" class="lang-btn">KAZAKH</div>
+        <div onclick="doGTranslate('en|mn')" class="lang-btn">MONGOLIAN</div>
         <div onclick="doGTranslate('en|en')" class="lang-btn">ENGLISH</div>
-        <div onclick="doGTranslate('en|ko')" class="lang-btn">KOREAN</div>
     </nav>
 
-    <div id="google_translate_element"></div>
+    <div id="google_translate_element" style="display:none"></div>
 
     <header>
         <h1>TOREMURAT</h1>
-        <p style="color: var(--gold); font-family: 'Cinzel'; letter-spacing: 3px;">The Elite Academic Strategy</p>
+        <p style="color: var(--gold); letter-spacing: 5px; font-weight: bold;">BE A MAN OF HONOR</p>
     </header>
 
     <div class="container">
         <div class="glass-panel">
             
-            <h2 style="font-family: 'Cinzel'; color: var(--gold); text-align: center; margin-top: 0;">Visionary Leadership</h2>
-            <p style="text-align: justify; font-style: italic;">"Арман — бұл тек қиял емес, бұл сенің болашағыңның жоспары. Ал мақсат — сол жоспарды іске асыратын нақты қадамдар." Моңғолия қазақ жастарына арналған бұл нұсқаулық сенің әлемдік деңгейге шығуыңа жол ашады.</p>
-
-            <h2 class="section-title">From Dream to Vision</h2>
+            <h2 class="section-title">The Foundation: Character</h2>
             <div class="article-card">
-                <h3>Қай кезден бастау керек?</h3>
-                <p>Максат қоюды мектеп табалдырығын аттағаннан, әсіресе <span class="highlight">7-8 сыныптан</span> бастап қолға алу керек. Бұл кезде сенің қызығушылығың қалыптасады. 
-                Арманды мақсатқа айналдыру үшін:</p>
-                <ul>
-                    <li><span class="highlight">Айқындық:</span> "Мен жақсы оқуым керек" емес, "Мен Кореяның KAIST университетіне IT мамандығына грантқа түсемін" деп нақтыла.</li>
-                    <li><span class="highlight">Уақыт:</span> Әр мақсатқа мерзім қой. 12-сыныпқа дейін IELTS 7.5 деңгейіне жетемін деген сияқты.</li>
-                    <li><span class="highlight">Әрекет:</span> Күнделікті 1 сағатты тек сол мақсатыңа (тіл үйрену немесе математика) арна.</li>
+                <h3>Ең бірінші — Адам бол!</h3>
+                <p>Бауырым, диплом мен баға — уақытша, ал <span class="highlight">Адамдық</span> — мәңгілік. Әке-шешеңе масыл болмай, өз арбаңды өзің сүйреп үйрен. Нағыз ер жігіт шешім қабылдаудан қорықпайды және сол шешімі үшін жауап береді.</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li>🔹 <span class="highlight">Адалдық:</span> Ниетің таза болсын. Өзіңді де, өзгені де алдама.</li>
+                    <li>🔹 <span class="highlight">Сыйластық:</span> Үлкенге — құрмет, кішіге — ізет. Бұл әлсіздік емес, бұл — тектілік.</li>
+                    <li>🔹 <span class="highlight">Тәртіп:</span> Жалғыз қалғанда да, көпшілік арасында да адамдық қалпыңды сақта.</li>
                 </ul>
             </div>
 
-            <h2 class="section-title">World-Class University Selection</h2>
+            <h2 class="section-title">Global Conquest: Scholarships</h2>
+            <img src="library_main.jpg" alt="Scholarships" class="content-img">
             <div class="article-card">
-                <h3>Моңғолия оқушылары үшін ТОП бағыттар</h3>
-                <p>Университет таңдағанда тек атына емес, оның беретін <span class="highlight">мүмкіндіктеріне</span> қара:</p>
+                <h3>Әлемдік мүмкіндіктер тақтасы</h3>
+                <p>Білім — сенің әлемге ашатын есігің. Мына гранттарды нысанаға ал:</p>
                 <ul>
-                    <li><span class="highlight">South Korea (SNU, KAIST, Yonsei):</span> Егер мақсатың технология, робототехника немесе бизнес болса. Корея — инновацияның орталығы.</li>
-                    <li><span class="highlight">Germany (Technical University of Munich):</span> Инженерия мен машина жасау саласында әлемде бірінші. Оқу тегін, тек неміс тілін меңгеру қажет.</li>
-                    <li><span class="highlight">USA (Ivy League, Stanford):</span> Егер сенің амбицияң жаһандық деңгейде болса және зерттеу жұмыстарына қызықсаң.</li>
+                    <li>🎓 <span class="highlight">Türkiye Bursları:</span> Түркияның толық гранты. Тегін оқу, жатақхана, стипендия және бауырлас елдің мәдениеті.</li>
+                    <li>🎓 <span class="highlight">GKS (Korea):</span> Оңтүстік Кореяның мемлекеттік гранты. Технология мен болашақтың орталығы.</li>
+                    <li>🎓 <span class="highlight">Stipendium Hungaricum:</span> Венгрия арқылы Еуропаға жол ашу.</li>
                 </ul>
-                
+                <p class="quote">"Сен осы гранттарға лайық болу үшін бүгін терлеуің керек. Ол үшін тек Корей тілі емес, математика мен логикаң "шотки" болуы тиіс."</p>
             </div>
 
-            <h2 class="section-title">Scholarships & Full Funding</h2>
+            <h2 class="section-title">Tech & Social Growth</h2>
+            <img src="news_tech.jpg" alt="Future" class="content-img">
             <div class="article-card">
-                <h3>Стипендиялық бағдарламалар (Full-Ride)</h3>
-                <p>Моңғолия жастарына арналған негізгі гранттар:</p>
-                <ul>
-                    <li><span class="highlight">GKS (Global Korea Scholarship):</span> Корея мемлекеті беретін ең үлкен грант. Оқу, ұшақ билеті, сақтандыру және ай сайынғы 1 млн вон стипендия.</li>
-                    <li><span class="highlight">Stipendium Hungaricum:</span> Венгрияның гранты. Моңғолия оқушыларына жыл сайын көп квота бөледі. Еуропада білім алудың ең жеңіл жолы.</li>
-                    <li><span class="highlight">DAAD (Germany):</span> Магистратура мен докторантура үшін, бірақ бакалавр деңгейінде де қолдау таба аласың.</li>
-                </ul>
+                <h3>Қарым-қатынас және Digital Skills</h3>
+                <p>Жалғыз жүріп жол тапқанша, көппен жүріп қол тап. Бірақ көпшілік арасында өз пікірің мен "Я-ң" болсын. Қазіргі заманда компьютерді меңгермеген адам — "соқырмен" тең. 
+                <br><br>
+                Мен YouTube каналымда тек тіл үйретпеймін, мен <span class="highlight">компьютерлік сауаттылықты</span>, өмірлік стратегияларды және нағыз адам болудың жолдарын бөлісемін.</p>
+                <a href="https://youtube.com/@toremurat" target="_blank" class="btn-action" style="border-color:#ff0000; color:#ff0000;">YouTube: Намыс пен Білім</a>
             </div>
 
-            <h2 class="section-title">Academic Execution</h2>
-            <div class="article-card">
-                <h3>GPA-ді қалай жоғары ұстау керек?</h3>
-                <p>Бағаны жоғарылату — бұл жүйелілік. Моңғолия мектептеріндегі ЭЕШ (Элсэлтийн ерөнхий шалгалт) нәтижесін 800-ге жеткізу үшін:</p>
-                <ol>
-                    <li><span class="highlight">Кітап оқу:</span> Күніне кемінде 30 бет ғылыми немесе классикалық әдебиет оқу мидың жұмысын 30%-ға жылдамдатады.</li>
-                    <li><span class="highlight">Ұйқы режимі:</span> Ми ақпаратты ұйқы кезінде қорытады. Түнгі 11-ден қалмай ұйықтау — есте сақтау қабілетін арттырады.</li>
-                    <li><span class="highlight">Тәлімгер (Mentor):</span> Өзіңнен озық тұрған адамнан кеңес ал. Менің платформам осы мақсатта құрылған.</li>
-                </ol>
-                
+            <div class="motivation-box">
+                <h3 style="color:var(--gold); margin-top:0;">ШЕШІМ ҚАБЫЛДА!</h3>
+                <p>"Ертең" деген сөз — сәтсіздердің ұраны. <br> 
+                Бүгіннен бастап әке-шешең сенімен мақтанатындай, <br> 
+                айналаң сені сыйлайтындай деңгейге көтеріл. <br> 
+                <span class="highlight">ТӘУЕКЕЛ ЕТ ТЕ, ӘРЕКЕТ ҚЫЛ!</span></p>
             </div>
 
-            <div style="text-align: center; margin-top: 50px;">
-                <p class="highlight">Сенің жетістігің — Моңғолияның абыройы!</p>
-                <a href="mailto:janbolattoremurat@gmail.com" class="btn">Start Your Strategy Now</a>
-            </div>
+            <a href="mailto:janbolattoremurat@gmail.com" class="btn-action">Request Mentorship (Тәлімгерлік)</a>
 
         </div>
     </div>
 
     <div class="footer">
-        © 2026 Byrlik TOREMURAT | MONGOLIA STRATEGIC ACADEMIC HUB
+        © 2026 ZHANBOLAT TOREMURAT | STRATEGY. HONOR. LEGACY.
     </div>
 
     <script type="text/javascript">
