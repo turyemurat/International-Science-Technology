@@ -3,133 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOREMURAT | Youth Strategic Mentor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@300;400;600&family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
+    <title>TOREMURAT | Strategic Academic & Cultural Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
     <style>
-        :root { --dark: #120d0a; --gold: #c5a059; --text: #e0d5c1; }
+        :root { --bg: #0d0d0d; --gold: #c5a059; --panel: #1a1512; --text: #e5e5e5; }
         * { box-sizing: border-box; }
-        body { 
-            margin: 0; background: var(--dark); color: var(--text); 
-            font-family: 'Montserrat', sans-serif; overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(18,13,10,0.7), var(--dark)), url('library_main.jpg') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            padding: 20px; border-bottom: 1px solid var(--gold);
-        }
-        h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 5px; }
-        .motto { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-top: 15px; }
-
-        .container { max-width: 1100px; margin: -60px auto 100px; padding: 0 15px; }
-
-        /* Profile Block */
-        .profile-card {
-            background: rgba(30, 24, 20, 0.95); border: 1px solid var(--gold);
-            padding: 40px; display: flex; align-items: center; gap: 30px; position: relative;
-        }
-        .profile-card img {
-            width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--gold);
-            object-fit: cover; box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
-        }
-
-        /* Section Styling */
-        .section-title {
-            font-family: 'Cinzel'; color: var(--gold); text-align: center;
-            font-size: 2rem; margin: 80px 0 40px; text-transform: uppercase;
-        }
-
-        .content-box {
-            background: rgba(255,255,255,0.02); border-left: 3px solid var(--gold);
-            padding: 30px; margin-bottom: 40px; transition: 0.3s;
-        }
-        .content-box:hover { background: rgba(197, 160, 89, 0.05); }
-        .content-box h3 { color: var(--gold); font-family: 'Cinzel'; margin-top: 0; }
+        body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; line-height: 1.8; }
         
-        /* Grid for Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .info-card { border: 1px solid rgba(197,160,89,0.2); padding: 25px; background: #1a1512; }
-        .info-card h4 { color: var(--gold); margin-top: 0; }
-
-        /* Images integration */
-        .image-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 30px 0; }
-        .image-gallery img { width: 100%; border: 1px solid var(--gold); }
-
-        .btn {
-            display: inline-block; padding: 12px 30px; border: 1px solid var(--gold);
-            color: var(--gold); text-decoration: none; text-transform: uppercase;
-            font-weight: bold; margin-top: 20px; transition: 0.3s;
+        header {
+            height: 70vh; background: linear-gradient(rgba(0,0,0,0.7), var(--bg)), url('library_main.jpg') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border-bottom: 2px solid var(--gold);
         }
-        .btn:hover { background: var(--gold); color: var(--dark); }
+        h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 7vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 8px; }
 
-        @media (max-width: 768px) {
-            .profile-card { flex-direction: column; text-align: center; }
-            h1 { font-size: 3rem; }
-        }
+        .container { max-width: 1200px; margin: -100px auto 100px; padding: 0 20px; }
+        .glass-panel { background: rgba(26, 21, 18, 0.98); border: 1px solid var(--gold); padding: 60px 40px; box-shadow: 0 50px 100px rgba(0,0,0,0.9); }
+
+        .author-box { display: flex; align-items: flex-start; gap: 40px; margin-bottom: 80px; padding-bottom: 40px; border-bottom: 1px solid rgba(197,160,89,0.2); }
+        .author-box img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; flex-shrink: 0; }
+        
+        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 2.2rem; border-left: 5px solid var(--gold); padding-left: 20px; margin: 60px 0 30px; }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .info-card { background: var(--panel); padding: 35px; border: 1px solid rgba(197,160,89,0.1); border-radius: 4px; transition: 0.4s; }
+        .info-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .info-card h3 { color: var(--gold); font-family: 'Cinzel'; margin-top: 0; font-size: 1.4rem; }
+
+        .banner { background: rgba(197, 160, 89, 0.05); border: 1px solid var(--gold); padding: 40px; margin: 40px 0; }
+        .korean-block { font-family: 'Noto Sans KR', sans-serif; background: #000; padding: 20px; border-left: 4px solid #fff; margin: 20px 0; }
+
+        .full-text { text-align: justify; margin-bottom: 30px; color: #ccc; }
+        .btn { display: inline-block; padding: 15px 40px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-family: 'Cinzel'; letter-spacing: 2px; transition: 0.3s; margin-top: 20px; }
+        .btn:hover { background: var(--gold); color: var(--bg); }
+
+        @media (max-width: 768px) { .author-box { flex-direction: column; align-items: center; text-align: center; } .glass-panel { padding: 30px 20px; } }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>TOREMURAT</h1>
-        <p class="motto">Building the Future of Mongolia & Kazakhstan</p>
-        <div style="margin-top: 20px;">
-            <span style="color:var(--gold)">KAZ | MNG | ENG | KOR</span>
-        </div>
-    </header>
+<header>
+    <h1>TOREMURAT</h1>
+    <p style="letter-spacing: 5px; color: var(--gold);">STRATEGIC YOUTH MENTORSHIP</p>
+</header>
 
-    <div class="container">
+<div class="container">
+    <div class="glass-panel">
         
-        <div class="profile-card">
+        <div class="author-box">
             <img src="author_photo.jpg" alt="Toremurat">
             <div>
-                <h2 style="font-family: 'Cinzel'; color: var(--gold); margin: 0;">Zhanbolat Toremurat</h2>
-                <p style="font-style: italic;">"Intelligence without ambition is a bird without wings. Let's build a legacy together."</p>
-                <div class="korean-text" style="font-family: 'Noto Sans KR'; color: var(--gold);">지식은 힘이다. 하지만 그 힘을 어떻게 쓰느냐가 더 중요하다.</div>
+                <h2 style="font-family: 'Cinzel'; color: var(--gold); margin: 0; font-size: 2.5rem;">Zhanbolat Toremurat</h2>
+                <p style="color: #a68942; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Global Academic Strategist | MNG-KAZ Liaison</p>
+                <p class="full-text">I am dedicated to bridging the gap between traditional heritage and modern technological advancement. My mission is to empower the Mongolian-Kazakh youth by providing a structured roadmap to international education, high-tech mastery, and economic self-sufficiency.</p>
+                <div class="korean-block">지적인 성장은 끝이 없으며, 우리는 세계적인 무대에서 우리의 문화를 지켜나가야 합니다. (Intellectual growth is endless, and we must preserve our culture on the global stage.)</div>
             </div>
         </div>
 
-        <h2 class="section-title">The 12-Year Roadmap for Students</h2>
-        <div class="content-box">
-            <h3>Strategic Education Planning</h3>
-            <p>High school is not just about grades; it's about building a portfolio. During your 12 years, focus on three pillars: **Core Sciences (Math/Physics)**, **Digital Literacy (AI/Tech)**, and **Cultural Identity**. I guide students on how to choose universities in South Korea, Europe, and the USA through full scholarship programs like GKS and Stipendium Hungaricum.</p>
+        <h2 class="section-title">The 12-Year Academic Roadmap</h2>
+        <div class="full-text">
+            For students in the Mongolian education system, the 12-year cycle is not just a preparation for a diploma; it is the most critical period for "Asset Building." 
+            * **Years 1-6:** Focus on linguistic foundations and logical thinking through Mathematics. 
+            * **Years 7-9:** Introduction to coding and scientific research. This is where you identify your niche—be it BioTech, FinTech, or Engineering.
+            * **Years 10-12:** Portfolio management. Preparing for SAT, IELTS, and TOPIK. My platform provides a month-by-month checklist to ensure you meet the deadlines for global scholarship windows.
         </div>
 
-        <div class="grid">
+        <div class="grid-3">
             <div class="info-card">
-                <h4>🚀 Future Careers</h4>
-                <p>Don't just pick a job; pick a mission. Sustainable Tourism in Mongolia, Agrotech, and AI-driven business models are the future. We must transition from being consumers to creators of technology.</p>
+                <h3>Global Scholarships</h3>
+                <p>We analyze programs like **GKS (South Korea)**, **Turkiye Burslari**, and **Stipendium Hungaricum**. I provide deep insights into writing "Statement of Purpose" (SOP) letters that stand out to admissions committees in Seoul and beyond.</p>
             </div>
             <div class="info-card">
-                <h4>🌍 Global Citizenship</h4>
-                <p>Your Kazakh roots are your strength. Whether you study in Seoul or London, carry your culture with you. True success is when your global knowledge serves your local community's economy.</p>
+                <h3>Economic Vision</h3>
+                <p>Education must serve the economy. Our focus is on **Sustainable Tourism** in Mongolia and **Agro-Business Tech**. We aim to build businesses that utilize international standards to promote Mongolian heritage globally.</p>
+            </div>
+            <div class="info-card">
+                <h3>Tech & AI Integration</h3>
+                <p>Technology is the new literacy. We teach students how to use **Artificial Intelligence** as a research partner, not just a tool. Understanding Prompt Engineering and Data Logic is mandatory for the next generation.</p>
             </div>
         </div>
 
-        <div class="image-gallery">
-            <img src="library_detail.jpg" alt="Science">
-            <img src="news_tech.jpg" alt="Technology">
+        <h2 class="section-title">Mastering Global Languages</h2>
+        <div class="banner">
+            <p><strong>Language Mastery (English & Korean):</strong> English is your gate to information, while Korean is your gate to high-tech education. My methodology for learning Korean involves "Contextual Immersive Learning." I offer guidance for TOPIK I-II and emphasize the importance of technical vocabulary.</p>
+            <p>To the youth of Mongolia: Do not just learn words; learn the philosophy behind the language. My contact below is open for students seeking a breakthrough in their language skills.</p>
         </div>
 
-        <h2 class="section-header section-title">Language & Tech Mastery</h2>
-        <div class="content-box">
-            <h3>Korean Language (한국어) & English</h3>
-            <p>As an expert in the Korean language, I provide exclusive methods to master it faster for TOPIK exams. Languages are the bridge to international platforms. Also, we integrate AI (Artificial Intelligence) into our study habits to optimize learning time. I share these techniques through my mentorship programs.</p>
-            <a href="mailto:janbolattoremurat@gmail.com" class="btn">Apply for Mentorship</a>
+        <h2 class="section-title">Cultural Identity & Future</h2>
+        <div class="full-text">
+            Біздің басты мақсатымыз — әлемдік технологияны меңгерген, бірақ өз ұлтының иісін сақтаған зиялы ұрпақ тәрбиелеу. Моңғолия қазақтарының бірегей мәдениеті — біздің халықаралық аренадағы "Unique Selling Point" (ерекшелігіміз). Білімді тек мансап үшін емес, елдің экономикасын, бизнесін және туризмін көтеру үшін алуымыз керек. 
         </div>
 
-        <div class="content-box" style="border-left-color: #fff;">
-            <h3 style="color: #fff;">Motivation for Mongolian Youth</h3>
-            <p>"To my brothers in Mongolia: The world is bigger than your surroundings. Don't let distance limit your dreams. Spend your 12 years reading books that challenge you, learning codes that build worlds, and preserving the spirit that makes you unique."</p>
+        <div style="text-align: center;">
+            <a href="mailto:janbolattoremurat@gmail.com" class="btn">Connect for Strategic Guidance</a>
         </div>
 
     </div>
+</div>
 
-    <footer style="text-align: center; padding: 50px; opacity: 0.5; font-size: 0.8rem;">
-        &copy; 2026 TOREMURAT STRATEGIC HUB | MONGOLIA-KAZAKHSTAN YOUTH LEADERSHIP
-    </footer>
+<footer style="text-align: center; padding: 60px; opacity: 0.4; font-size: 0.7rem; letter-spacing: 4px;">
+    &copy; 2026 TOREMURAT ACADEMIC HUB | MONGOLIA-KAZAKHSTAN | ALL RIGHTS RESERVED
+</footer>
 
 </body>
 </html>
