@@ -3,42 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOREMURAT | Strategy, Character & Legacy</title>
+    <title>TOREMURAT | Strategy & Alash Spirit</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --brown: #1a120b; --gold: #c5a059; --panel: #2d2013; --text: #f5f5f5; }
         * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { margin: 0; background: var(--brown); color: var(--text); font-family: 'Lora', serif; line-height: 1.8; overflow-x: hidden; }
+        body { margin: 0; background: var(--brown); color: var(--text); font-family: 'Lora', serif; line-height: 1.8; }
 
         nav { background: rgba(26, 18, 11, 0.98); padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .lang-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.7rem; cursor: pointer; border: 1px solid var(--gold); padding: 5px 10px; transition: 0.5s; background: transparent; }
-        .lang-btn:hover { background: var(--gold); color: var(--brown); box-shadow: 0 0 10px var(--gold); }
+        .lang-btn { color: var(--gold); text-decoration: none; font-family: 'Cinzel'; font-size: 0.75rem; cursor: pointer; border: 1px solid var(--gold); padding: 5px 12px; transition: 0.4s; }
+        .lang-btn:hover { background: var(--gold); color: var(--brown); }
 
         header {
-            height: 60vh; background: linear-gradient(rgba(26, 18, 11, 0.85), var(--brown)), url('library_main.jpg') center/cover;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+            height: 50vh; background: linear-gradient(rgba(26, 18, 11, 0.8), var(--brown)), url('library_main.jpg') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
-        h1 { font-family: 'Cinzel'; font-size: clamp(2.5rem, 8vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 12px; }
+        h1 { font-family: 'Cinzel'; font-size: clamp(2rem, 8vw, 5rem); color: var(--gold); margin: 0; letter-spacing: 8px; }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .glass-panel { background: var(--panel); border: 2px solid var(--gold); padding: 40px 25px; margin-top: -100px; position: relative; z-index: 10; box-shadow: 0 50px 100px rgba(0,0,0,0.9); }
+        .glass-panel { background: var(--panel); border: 1px solid var(--gold); padding: 40px 25px; margin-top: -80px; position: relative; z-index: 10; box-shadow: 0 40px 80px rgba(0,0,0,0.8); }
 
-        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 1.8rem; border-bottom: 3px double var(--gold); padding-bottom: 8px; margin: 50px 0 25px; text-align: center; text-transform: uppercase; }
-        .article-card { background: rgba(0,0,0,0.2); border: 1px solid rgba(197, 160, 89, 0.3); padding: 30px; margin-bottom: 30px; border-radius: 15px; }
+        .section-title { font-family: 'Cinzel'; color: var(--gold); font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin: 50px 0 25px; text-align: center; }
+        .article-card { background: rgba(255,255,255,0.02); border-left: 3px solid var(--gold); padding: 25px; margin-bottom: 30px; }
         
-        .content-img { width: 100%; border-radius: 40px; border: 2px solid var(--gold); margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
-
+        .content-img { width: 100%; border-radius: 30px; border: 1px solid var(--gold); margin: 20px 0; }
         .highlight { color: var(--gold); font-weight: 700; }
-        .quote { font-style: italic; color: #bbb; border-left: 3px solid var(--gold); padding-left: 20px; margin: 20px 0; }
+        .btn-action { display: block; width: 100%; max-width: 350px; margin: 30px auto; padding: 15px; border: 2px solid var(--gold); color: var(--gold); font-family: 'Cinzel'; text-align: center; text-decoration: none; transition: 0.4s; font-weight: bold; }
+        .btn-action:hover { background: var(--gold); color: var(--brown); }
 
-        .btn-action { display: block; width: 100%; max-width: 350px; margin: 30px auto; padding: 18px; background: transparent; border: 2px solid var(--gold); color: var(--gold); font-family: 'Cinzel'; font-size: 0.9rem; font-weight: 900; text-align: center; text-decoration: none; transition: 0.4s; letter-spacing: 2px; }
-        .btn-action:hover { background: var(--gold); color: var(--brown); box-shadow: 0 0 20px var(--gold); }
+        /* Final Manifest Style */
+        .alash-manifesto {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('eagle_background.jpg') center/cover;
+            border: 2px solid var(--gold); padding: 50px 30px; text-align: center; border-radius: 40px; margin-top: 60px;
+        }
+        .alash-manifesto h2 { font-family: 'Cinzel'; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; }
+        .alash-manifesto p { font-size: 1.2rem; font-style: italic; color: #fff; line-height: 2; }
 
-        .motivation-box { background: linear-gradient(45deg, #2d2013, #1a120b); border: 1px dashed var(--gold); padding: 25px; text-align: center; margin: 40px 0; border-radius: 20px; }
-
-        .footer { text-align: center; padding: 50px; border-top: 1px solid var(--gold); opacity: 0.6; font-size: 0.8rem; }
-
-        @media (max-width: 768px) { .glass-panel { padding: 25px 15px; } h1 { font-size: 3rem; letter-spacing: 5px; } }
+        @media (max-width: 768px) { .glass-panel { padding: 20px 15px; } h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
@@ -53,61 +54,44 @@
 
     <header>
         <h1>TOREMURAT</h1>
-        <p style="color: var(--gold); letter-spacing: 5px; font-weight: bold;">BE A MAN OF HONOR</p>
+        <p style="color: var(--gold); letter-spacing: 3px;">GLOBAL ACADEMIC STRATEGY</p>
     </header>
 
     <div class="container">
         <div class="glass-panel">
             
-            <h2 class="section-title">The Foundation: Character</h2>
+            <h2 class="section-title">Academic & Digital Strategy</h2>
+            <img src="library_main.jpg" alt="Study Excellence" class="content-img">
             <div class="article-card">
-                <h3>Ең бірінші — Адам бол!</h3>
-                <p>Бауырым, диплом мен баға — уақытша, ал <span class="highlight">Адамдық</span> — мәңгілік. Әке-шешеңе масыл болмай, өз арбаңды өзің сүйреп үйрен. Нағыз ер жігіт шешім қабылдаудан қорықпайды және сол шешімі үшін жауап береді.</p>
-                <ul style="list-style: none; padding: 0;">
-                    <li>🔹 <span class="highlight">Адалдық:</span> Ниетің таза болсын. Өзіңді де, өзгені де алдама.</li>
-                    <li>🔹 <span class="highlight">Сыйластық:</span> Үлкенге — құрмет, кішіге — ізет. Бұл әлсіздік емес, бұл — тектілік.</li>
-                    <li>🔹 <span class="highlight">Тәртіп:</span> Жалғыз қалғанда да, көпшілік арасында да адамдық қалпыңды сақта.</li>
-                </ul>
+                <h3>ЕESH & GPA Excellence</h3>
+                <p>Баға — бұл сенің мүмкіндігің. ЭЕШ-тен 800 балл алу, IELTS-тан жоғары нәтиже көрсету және әлемдік гранттарды бағындыру — бұл құр қиял емес, нақты стратегия. Мен сендерге код жазудың жеңіл жолдарын, тілді тез меңгерудің әдістерін және шешім қабылдау өнерін үйретемін.</p>
             </div>
 
-            <h2 class="section-title">Global Conquest: Scholarships</h2>
-            <img src="library_main.jpg" alt="Scholarships" class="content-img">
-            <div class="article-card">
-                <h3>Әлемдік мүмкіндіктер тақтасы</h3>
-                <p>Білім — сенің әлемге ашатын есігің. Мына гранттарды нысанаға ал:</p>
-                <ul>
-                    <li>🎓 <span class="highlight">Türkiye Bursları:</span> Түркияның толық гранты. Тегін оқу, жатақхана, стипендия және бауырлас елдің мәдениеті.</li>
-                    <li>🎓 <span class="highlight">GKS (Korea):</span> Оңтүстік Кореяның мемлекеттік гранты. Технология мен болашақтың орталығы.</li>
-                    <li>🎓 <span class="highlight">Stipendium Hungaricum:</span> Венгрия арқылы Еуропаға жол ашу.</li>
-                </ul>
-                <p class="quote">"Сен осы гранттарға лайық болу үшін бүгін терлеуің керек. Ол үшін тек Корей тілі емес, математика мен логикаң "шотки" болуы тиіс."</p>
+            <div class="article-card" style="border-left-color: #ff0000;">
+                <h3>YouTube: Knowledge Base</h3>
+                <p>Тіл мен технологияның ұштасқан жері. Нағыз практика мен "шоткый" лайфхактарды жіберіп алма.</p>
+                <a href="https://youtube.com/@toremurat" target="_blank" class="btn-action" style="border-color:#ff0000; color:#ff0000;">SUBSCRIBE TO CHANNEL</a>
             </div>
 
-            <h2 class="section-title">Tech & Social Growth</h2>
-            <img src="news_tech.jpg" alt="Future" class="content-img">
-            <div class="article-card">
-                <h3>Қарым-қатынас және Digital Skills</h3>
-                <p>Жалғыз жүріп жол тапқанша, көппен жүріп қол тап. Бірақ көпшілік арасында өз пікірің мен "Я-ң" болсын. Қазіргі заманда компьютерді меңгермеген адам — "соқырмен" тең. 
-                <br><br>
-                Мен YouTube каналымда тек тіл үйретпеймін, мен <span class="highlight">компьютерлік сауаттылықты</span>, өмірлік стратегияларды және нағыз адам болудың жолдарын бөлісемін.</p>
-                <a href="https://youtube.com/@toremurat" target="_blank" class="btn-action" style="border-color:#ff0000; color:#ff0000;">YouTube: Намыс пен Білім</a>
+            <div class="alash-manifesto">
+                <h2>THE SPIRIT OF ALASH</h2>
+                <p>
+                    "Мен — Моңғолия қазағымын, Алаштың айбынды ұрпағымын! <br> 
+                    Көгімде қалықтаған <span class="highlight">Бүркіттей</span> білімімді ту қылып, қанатымды жаһанға кең жаямын. <br><br>
+                    Мен мұнда сендерге жай ғана ақыл айту үшін емес, <span class="highlight">12 жылдық мектеп табалдырығында жинаған тәжірибеммен</span>, 
+                    көрген-түйгеніммен және әлемдік деңгейдегі білім жолындағы барлық құпияларыммен бөлісу үшін келдім. <br><br>
+                    Бұл — тек бастамасы. Біз бірге әлемді бағындырамыз. Біздің рухымыз — білімде, күшіміз — бірлікте!"
+                </p>
+                <div style="font-family: 'Cinzel'; color: var(--gold); margin-top: 30px; font-size: 1.5rem; letter-spacing: 5px;">
+                    ZHANBOLAT TOREMURAT
+                </div>
             </div>
-
-            <div class="motivation-box">
-                <h3 style="color:var(--gold); margin-top:0;">ШЕШІМ ҚАБЫЛДА!</h3>
-                <p>"Ертең" деген сөз — сәтсіздердің ұраны. <br> 
-                Бүгіннен бастап әке-шешең сенімен мақтанатындай, <br> 
-                айналаң сені сыйлайтындай деңгейге көтеріл. <br> 
-                <span class="highlight">ТӘУЕКЕЛ ЕТ ТЕ, ӘРЕКЕТ ҚЫЛ!</span></p>
-            </div>
-
-            <a href="mailto:janbolattoremurat@gmail.com" class="btn-action">Request Mentorship (Тәлімгерлік)</a>
 
         </div>
     </div>
 
     <div class="footer">
-        © 2026 ZHANBOLAT TOREMURAT | STRATEGY. HONOR. LEGACY.
+        © 2026 ZHANBOLAT TOREMURAT | THE ELITE MONGOLIAN KAZAKH STRATEGIST
     </div>
 
     <script type="text/javascript">
